@@ -30,7 +30,7 @@ public class MoodAnalyzer {
 	public static void main(String[] args) {
 		
 		//Creating an object of Mood Analyzer
-		MoodAnalyzer MoodAnalyzerObject = new MoodAnalyzer("I am in sad mood");
+		MoodAnalyzer MoodAnalyzerObject = new MoodAnalyzer("I am in sad mood"); //calling parameterized constructor
 		MoodAnalyzerObject.analyzeMood();
 	}
 }
