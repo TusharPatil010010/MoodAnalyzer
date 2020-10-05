@@ -19,6 +19,6 @@ public class MoodAnalyzer {
 		
 		//Creating an object of Mood Analyzer
 		MoodAnalyzer MoodAnalyzerObject = new MoodAnalyzer();
-		MoodAnalyzerObject.analyzeMood("I am in Sad Mood");
+		MoodAnalyzerObject.analyzeMood("I am in Any Mood");
 	}
 }
