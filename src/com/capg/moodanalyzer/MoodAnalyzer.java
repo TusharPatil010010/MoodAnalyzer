@@ -4,6 +4,10 @@ public class MoodAnalyzer {
 	
 	String inputMessage ;
 	
+	enum Input {
+		NULL, Empty;
+	}
+	
 	
 	//default constructor
 	public MoodAnalyzer() {
@@ -15,28 +19,21 @@ public class MoodAnalyzer {
 		this.inputMessage = inputMessage;
 	}
 	
-	public  String analyzeMood() {
+	public  String analyzeMood() throws MoodAnalysisException {
 		
 		try {
 			if(inputMessage.equalsIgnoreCase("I am in sad mood")) {
 				System.out.println("SAD");
 				return "SAD";
 			}
-			else {
-				System.out.println("HAPPY");
-				return "HAPPY";
-			}
-		} catch (Exception e) {
-			System.out.println(e);
-			System.out.println("Returned Happy Mood");
-			return "HAPPY";
+			
+		} catch (NullPointerException npe) {
+			throw new MoodAnalysisException("Invalid mood "+ Input.NULL);
 		}
-	}
-	
-	public static void main(String[] args) {
 		
-		//Creating an object of Mood Analyzer
-		MoodAnalyzer MoodAnalyzerObject = new MoodAnalyzer(); //calling parameterized constructor
-		MoodAnalyzerObject.analyzeMood();
+		if(inputMessage.equals("")) {
+			throw new MoodAnalysisException("Empty mood "+ Input.Empty );
+		}
+		return "HAPPY";
 	}
 }
