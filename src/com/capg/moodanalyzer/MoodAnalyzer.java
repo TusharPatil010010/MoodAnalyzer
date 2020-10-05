@@ -17,20 +17,25 @@ public class MoodAnalyzer {
 	
 	public  String analyzeMood() {
 		
-		if(inputMessage.equalsIgnoreCase("I am in sad mood")) {
-			System.out.println("SAD");
-			return "SAD";
-		}
-		else {
-			System.out.println("HAPPY");
-			return "HAPPY";
+		try {
+			if(inputMessage.equalsIgnoreCase("I am in sad mood")) {
+				System.out.println("SAD");
+				return "SAD";
+			}
+			else {
+				System.out.println("HAPPY");
+				return "HAPPY";
+			}
+		} catch (Exception e) {
+			System.out.println("Exception Handled");
+			return "Exception Handled";
 		}
 	}
 	
 	public static void main(String[] args) {
 		
 		//Creating an object of Mood Analyzer
-		MoodAnalyzer MoodAnalyzerObject = new MoodAnalyzer("I am in any mood"); //calling parameterized constructor
+		MoodAnalyzer MoodAnalyzerObject = new MoodAnalyzer(); //calling parameterized constructor
 		MoodAnalyzerObject.analyzeMood();
 	}
 }
