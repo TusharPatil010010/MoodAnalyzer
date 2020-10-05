@@ -28,11 +28,11 @@ public class MoodAnalyzer {
 			}
 			
 		} catch (NullPointerException npe) {
-			throw new MoodAnalysisException("Invalid mood "+ Input.NULL);
+			throw new MoodAnalysisException("Invalid mood, Enter valid mood "+ Input.NULL);
 		}
 		
 		if(inputMessage.equals("")) {
-			throw new MoodAnalysisException("Empty mood "+ Input.Empty );
+			throw new MoodAnalysisException("Empty mood, Enter valid mood "+ Input.Empty );
 		}
 		return "HAPPY";
 	}
