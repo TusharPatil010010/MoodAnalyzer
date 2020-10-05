@@ -27,8 +27,9 @@ public class MoodAnalyzer {
 				return "HAPPY";
 			}
 		} catch (Exception e) {
-			System.out.println("Exception Handled");
-			return "Exception Handled";
+			System.out.println(e);
+			System.out.println("Returned Happy Mood");
+			return "HAPPY";
 		}
 	}
 	
